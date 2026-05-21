@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>倒计时+ 隐私政策</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --text: #191b2a;
+      --muted: #687084;
+      --line: #e4e7ef;
+      --primary: #695cf6;
+      --primary-soft: #eeeafe;
+      --accent: #ff8a4c;
+      --shadow: 0 20px 60px rgba(31, 35, 63, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 4%, rgba(105, 92, 246, 0.12), transparent 34%),
+        linear-gradient(180deg, #fbfbff 0%, var(--bg) 42%, #ffffff 100%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.78;
+    }
+
+    .page {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 72px;
+    }
+
+    header {
+      padding: 44px;
+      border: 1px solid rgba(105, 92, 246, 0.12);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .brand-mark {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 5px rgba(105, 92, 246, 0.14);
+    }
+
+    h1 {
+      margin: 26px 0 12px;
+      font-size: clamp(36px, 6vw, 56px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .meta-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    .meta-label {
+      margin: 0 0 2px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .meta-value {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    main {
+      display: grid;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    section {
+      padding: 30px 34px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--panel);
+      box-shadow: 0 12px 34px rgba(35, 39, 72, 0.06);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 18px;
+      line-height: 1.45;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 10px 0;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .note {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--primary);
+      border-radius: 14px;
+      background: var(--primary-soft);
+      color: #45405f;
+    }
+
+    .contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    footer {
+      margin-top: 24px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(100% - 22px, 980px);
+        padding: 22px 0 44px;
+      }
+
+      header {
+        padding: 28px 22px;
+        border-radius: 24px;
+      }
+
+      .meta {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 24px 20px;
+        border-radius: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand"><span class="brand-mark"></span>倒计时+</div>
+      <h1>隐私政策</h1>
+      <p class="intro">我们重视你的隐私。本政策说明「倒计时+」如何处理与你使用本应用相关的信息，包括倒计时数据、提醒、小组件、登录同步和订阅服务。</p>
+      <div class="meta">
+        <div class="meta-item">
+          <p class="meta-label">生效日期</p>
+          <p class="meta-value">2026年5月21日</p>
+        </div>
+        <div class="meta-item">
+          <p class="meta-label">适用产品</p>
+          <p class="meta-value">倒计时+ iOS 应用及小组件</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>1. 我们收集和处理的信息</h2>
+        <p>为了提供倒计时、提醒、小组件、订阅和数据同步等功能，我们可能会处理以下信息：</p>
+        <ul>
+          <li><strong>倒计时内容：</strong>你创建的倒计时名称、日期、重复规则、标签、置顶状态、提醒设置和相关展示配置。</li>
+          <li><strong>本地设置：</strong>主题、首页偏好、日历展示、工作日设置、小组件展示配置等应用内偏好。</li>
+          <li><strong>通知信息：</strong>提醒时间、通知权限状态和用于安排本地提醒的必要信息。</li>
+          <li><strong>账号信息：</strong>当你使用登录或同步功能时，可能会处理匿名用户标识、Apple 登录授权信息、邮箱登录信息以及账号关联的同步数据。</li>
+          <li><strong>订阅信息：</strong>订阅状态、会员权益、购买凭证校验结果等与 App Store 订阅相关的信息。我们不会收集或保存你的完整银行卡号、支付密码等支付敏感信息。</li>
+          <li><strong>设备与服务信息：</strong>为保障同步、购买校验、通知和小组件稳定运行，可能会处理应用版本、系统版本、设备类型、运行状态和必要的诊断信息。</li>
+        </ul>
+        <p class="note">如果你只在本地使用倒计时功能，核心倒计时数据会优先保存在你的设备上；当你启用登录、同步、订阅或恢复购买等功能时，相关数据可能会通过第三方服务处理。</p>
+      </section>
+
+      <section>
+        <h2>2. 我们如何使用这些信息</h2>
+        <ul>
+          <li>创建、展示、编辑和管理你的倒计时。</li>
+          <li>根据你的设置发送本地提醒，并更新桌面小组件内容。</li>
+          <li>在你登录后提供数据同步、账号识别和跨设备恢复能力。</li>
+          <li>验证订阅状态、恢复购买并解锁会员功能。</li>
+          <li>维护应用稳定性，排查异常，改进基础体验。</li>
+          <li>遵守适用法律法规、平台规则和安全要求。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. 权限说明</h2>
+        <h3>通知权限</h3>
+        <p>应用会在你授权后使用通知权限，用于发送倒计时提醒。你可以随时在 iOS 系统设置中关闭通知权限。</p>
+
+        <h3>后台刷新与小组件</h3>
+        <p>应用可能使用后台刷新、后台任务和 App Groups 能力，以便更新小组件内容、同步必要状态，并保持提醒体验可靠。</p>
+
+        <h3>登录与购买</h3>
+        <p>当你使用 Apple 登录、邮箱登录、订阅、恢复购买等功能时，应用会与 Apple、RevenueCat、Supabase 等服务交互，以完成身份识别、购买校验或数据同步。</p>
+      </section>
+
+      <section>
+        <h2>4. 第三方服务</h2>
+        <p>为了实现必要功能，我们可能使用以下第三方服务。它们会根据各自的隐私政策处理相关信息：</p>
+        <ul>
+          <li><strong>Apple：</strong>用于 App Store 下载、订阅购买、恢复购买、StoreKit 和 Sign in with Apple。</li>
+          <li><strong>RevenueCat：</strong>用于订阅状态管理、购买凭证校验和会员权益识别。</li>
+          <li><strong>Supabase：</strong>用于账号登录、用户数据同步和相关云端数据存储。</li>
+        </ul>
+        <p>我们不会出售你的个人信息，也不会为了第三方广告目的主动共享你的倒计时内容。</p>
+      </section>
+
+      <section>
+        <h2>5. 数据存储与保留</h2>
+        <ul>
+          <li><strong>本地数据：</strong>倒计时、偏好设置和小组件所需数据可能保存在你的设备中，直到你在应用内删除、卸载应用或清除相关数据。</li>
+          <li><strong>云端数据：</strong>如果你使用登录或同步功能，相关数据可能保存在云端，直到你删除账号、请求删除数据，或服务不再需要保留这些信息。</li>
+          <li><strong>订阅记录：</strong>订阅和购买相关记录可能由 Apple 和 RevenueCat 按其服务规则保留，用于购买校验、恢复购买和客户支持。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>6. 数据安全</h2>
+        <p>我们会采取合理的技术和管理措施保护你的信息，例如使用平台提供的安全能力、限制不必要的数据访问，并尽量只处理实现功能所需的最少信息。</p>
+        <p>但请理解，任何互联网传输或电子存储方式都无法保证绝对安全。如果你发现异常登录、数据异常或其他安全问题，请及时联系我们。</p>
+      </section>
+
+      <section>
+        <h2>7. 你的选择与权利</h2>
+        <ul>
+          <li>你可以在应用内创建、修改或删除倒计时数据。</li>
+          <li>你可以在系统设置中管理通知权限、后台刷新权限等系统级权限。</li>
+          <li>你可以在应用内退出登录或恢复购买。</li>
+          <li>如需访问、更正或删除与账号相关的数据，可以通过本政策中的联系方式联系我们。</li>
+          <li>如果你不希望使用云端同步功能，可以选择不登录，仅使用本地功能。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>8. 儿童隐私</h2>
+        <p>本应用不面向未满 13 周岁的儿童主动收集个人信息。如果你认为我们在未经监护人同意的情况下处理了儿童个人信息，请联系我们，我们会尽快处理。</p>
+      </section>
+
+      <section>
+        <h2>9. 跨境处理</h2>
+        <p>由于 Apple、RevenueCat、Supabase 等第三方服务可能在不同国家或地区运营，你的信息可能会在你所在地区以外被处理。我们会在必要范围内使用这些服务来提供登录、同步、购买校验等功能。</p>
+      </section>
+
+      <section>
+        <h2>10. 政策更新</h2>
+        <p>我们可能会根据产品功能、法律法规或平台规则变化更新本隐私政策。更新后，我们会在应用内、官方网站或相关页面展示新的生效日期。若更新涉及重大变化，我们会尽量以合理方式提醒你。</p>
+      </section>
+
+      <section>
+        <h2>11. 联系我们</h2>
+        <p>如果你对本隐私政策、个人信息处理或数据删除有任何问题，可以通过以下邮箱联系我们：</p>
+        <a class="contact" href="mailto:time_countdown@ynglan.cn">time_countdown@ynglan.cn</a>
+      </section>
+    </main>
+
+    <footer>© 2026 倒计时+。保留所有权利。</footer>
+  </div>
+</body>
+</html>

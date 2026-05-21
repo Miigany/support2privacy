@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>倒计时+ 支持</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fc;
+      --panel: #ffffff;
+      --text: #191b2a;
+      --muted: #6b7284;
+      --line: #e5e8f1;
+      --primary: #695cf6;
+      --primary-soft: #eeeafe;
+      --accent: #ff8a4c;
+      --ok: #24b46b;
+      --shadow: 0 20px 56px rgba(31, 35, 63, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(105, 92, 246, 0.13), transparent 32%),
+        linear-gradient(180deg, #fbfbff 0%, var(--bg) 48%, #ffffff 100%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.74;
+    }
+
+    .page {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 72px;
+    }
+
+    header {
+      padding: 44px;
+      border: 1px solid rgba(105, 92, 246, 0.12);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 5px rgba(105, 92, 246, 0.14);
+    }
+
+    h1 {
+      margin: 26px 0 12px;
+      font-size: clamp(36px, 6vw, 56px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button.primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 12px 24px rgba(105, 92, 246, 0.25);
+    }
+
+    .button.secondary {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+    }
+
+    main {
+      display: grid;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    section {
+      padding: 30px 34px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--panel);
+      box-shadow: 0 12px 34px rgba(35, 39, 72, 0.06);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 18px;
+      line-height: 1.45;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 10px 0;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    .card-title {
+      margin: 0 0 6px;
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .card-text {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(36, 180, 107, 0.10);
+      color: #16794a;
+      font-weight: 700;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--ok);
+    }
+
+    footer {
+      margin-top: 24px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 22px, 980px);
+        padding: 22px 0 44px;
+      }
+
+      header {
+        padding: 28px 22px;
+        border-radius: 24px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 24px 20px;
+        border-radius: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="badge"><span class="dot"></span>倒计时+</div>
+      <h1>支持与帮助</h1>
+      <p class="intro">如果你在使用「倒计时+」时遇到倒计时、提醒、小组件、订阅或账号同步相关问题，可以在这里找到常见解决方法，并联系开发者获得支持。</p>
+      <div class="actions">
+        <a class="button primary" href="mailto:time_countdown@ynglan.cn?subject=%E5%80%92%E8%AE%A1%E6%97%B6%2B%20%E6%94%AF%E6%8C%81%E8%AF%B7%E6%B1%82">联系支持</a>
+        <a class="button secondary" href="./倒计时+隐私政策.html">查看隐私政策</a>
+      </div>
+      <div class="status"><span class="status-dot"></span>支持邮箱正常接收问题反馈</div>
+    </header>
+
+    <main>
+      <section>
+        <h2>联系开发者</h2>
+        <p>请通过以下邮箱联系我们。为了更快定位问题，建议在邮件中附上 App 版本、iOS 版本、设备型号、问题截图以及复现步骤。</p>
+        <p><strong>邮箱：</strong><a href="mailto:time_countdown@ynglan.cn">time_countdown@ynglan.cn</a></p>
+        <p><strong>应用名称：</strong>倒计时+</p>
+        <p><strong>支持语言：</strong>中文</p>
+      </section>
+
+      <section>
+        <h2>常见问题</h2>
+        <h3>提醒没有按时出现怎么办？</h3>
+        <ul>
+          <li>确认 iOS 系统设置中已允许「倒计时+」发送通知。</li>
+          <li>确认倒计时详情页中已经开启提醒，并设置了正确的提醒时间。</li>
+          <li>如果开启了专注模式、低电量模式或系统通知摘要，提醒可能会被延后或静默展示。</li>
+        </ul>
+
+        <h3>小组件没有更新怎么办？</h3>
+        <ul>
+          <li>打开一次「倒计时+」，让 App 同步最新倒计时和小组件数据。</li>
+          <li>长按小组件并重新选择展示内容，或移除后重新添加小组件。</li>
+          <li>确认系统没有限制后台刷新。</li>
+        </ul>
+
+        <h3>如何恢复购买？</h3>
+        <ul>
+          <li>请使用购买订阅时的 Apple ID 登录 App Store。</li>
+          <li>在 App 内进入订阅或会员页面，点击「恢复购买」。</li>
+          <li>如果恢复失败，请附上购买时间和问题截图联系我们。请不要在邮件中发送银行卡、密码等敏感信息。</li>
+        </ul>
+
+        <h3>如何删除倒计时或同步数据？</h3>
+        <ul>
+          <li>本地倒计时可以在 App 内直接删除。</li>
+          <li>如果你使用了登录或同步功能，并希望删除账号关联数据，请发送邮件联系我们处理。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>问题反馈模板</h2>
+        <div class="grid">
+          <div class="card">
+            <p class="card-title">基础信息</p>
+            <p class="card-text">设备型号、iOS 版本、App 版本。</p>
+          </div>
+          <div class="card">
+            <p class="card-title">问题描述</p>
+            <p class="card-text">说明发生了什么、期望结果是什么。</p>
+          </div>
+          <div class="card">
+            <p class="card-title">复现步骤</p>
+            <p class="card-text">尽量按 1、2、3 的顺序描述操作步骤。</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>订阅与退款</h2>
+        <p>订阅购买、续订和退款由 Apple App Store 处理。我们可以帮助你排查会员状态和恢复购买问题，但退款申请需要通过 Apple 官方渠道提交。</p>
+        <p>你可以在 iPhone 的「设置」中进入 Apple ID 订阅管理页面，查看或取消订阅。</p>
+      </section>
+
+      <section>
+        <h2>隐私与数据</h2>
+        <p>我们只会在提供倒计时、提醒、小组件、登录同步和订阅服务所需的范围内处理信息。详细说明请查看隐私政策。</p>
+        <p><a href="./倒计时+隐私政策.html">打开「倒计时+」隐私政策</a></p>
+      </section>
+    </main>
+
+    <footer>© 2026 倒计时+。保留所有权利。</footer>
+  </div>
+</body>
+</html>
