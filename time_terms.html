@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>倒计时+ 使用条款</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --text: #191b2a;
+      --muted: #687084;
+      --line: #e4e7ef;
+      --primary: #695cf6;
+      --primary-soft: #eeeafe;
+      --accent: #ff8a4c;
+      --shadow: 0 20px 60px rgba(31, 35, 63, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 4%, rgba(105, 92, 246, 0.12), transparent 34%),
+        linear-gradient(180deg, #fbfbff 0%, var(--bg) 42%, #ffffff 100%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.78;
+    }
+
+    .page {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 72px;
+    }
+
+    header {
+      padding: 44px;
+      border: 1px solid rgba(105, 92, 246, 0.12);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .brand-mark {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 5px rgba(105, 92, 246, 0.14);
+    }
+
+    h1 {
+      margin: 26px 0 12px;
+      font-size: clamp(36px, 6vw, 56px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .meta-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    .meta-label {
+      margin: 0 0 2px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .meta-value {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    main {
+      display: grid;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    section {
+      padding: 30px 34px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--panel);
+      box-shadow: 0 12px 34px rgba(35, 39, 72, 0.06);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 18px;
+      line-height: 1.45;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 10px 0;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    a {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .note {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--primary);
+      border-radius: 14px;
+      background: var(--primary-soft);
+      color: #45405f;
+    }
+
+    .contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    footer {
+      margin-top: 24px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(100% - 22px, 980px);
+        padding: 22px 0 44px;
+      }
+
+      header {
+        padding: 28px 22px;
+        border-radius: 24px;
+      }
+
+      .meta {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 24px 20px;
+        border-radius: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand"><span class="brand-mark"></span>倒计时+</div>
+      <h1>使用条款</h1>
+      <p class="intro">欢迎使用「倒计时+」。本条款说明你使用本应用、会员订阅、提醒、小组件和数据同步等功能时的权利与责任。请在使用应用或购买订阅前阅读并理解本条款。</p>
+      <div class="meta">
+        <div class="meta-item">
+          <p class="meta-label">生效日期</p>
+          <p class="meta-value">2026年6月11日</p>
+        </div>
+        <div class="meta-item">
+          <p class="meta-label">适用产品</p>
+          <p class="meta-value">倒计时+ iOS 应用及小组件</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>1. 接受条款</h2>
+        <p>当你下载、安装、访问或使用「倒计时+」时，即表示你同意遵守本使用条款。如果你不同意本条款，请停止使用本应用。</p>
+        <p>如果你代表组织或其他主体使用本应用，你确认自己有权代表该主体接受本条款。</p>
+      </section>
+
+      <section>
+        <h2>2. 服务内容</h2>
+        <p>「倒计时+」提供倒计时创建与管理、提醒、日历视图、小组件、会员功能、订阅购买、恢复购买以及可选的数据同步等功能。我们可能会根据产品规划、平台规则或技术原因调整、暂停或停止部分功能。</p>
+        <p class="note">倒计时提醒、小组件刷新和同步状态可能受到 iOS 系统权限、网络、后台刷新策略和设备状态影响。我们会尽力提供可靠体验，但不保证所有提醒或同步在任何情况下都绝对准时或成功。</p>
+      </section>
+
+      <section>
+        <h2>3. 用户责任</h2>
+        <ul>
+          <li>你应确保创建、保存或同步的倒计时内容合法、真实，并不侵犯他人权利。</li>
+          <li>你不得以破坏、干扰、逆向工程、滥用接口或规避订阅限制等方式使用本应用。</li>
+          <li>你需要自行维护设备、系统权限、网络连接和账号安全。</li>
+          <li>如果你使用登录或同步功能，应妥善保管账号凭证，并对账号下的操作负责。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4. 订阅与购买</h2>
+        <p>「倒计时+」可能提供自动续订订阅、终身会员或其他应用内购买项目。具体产品名称、价格、周期、权益和可用性以 App 内购买页面及 App Store 展示为准。</p>
+        <ul>
+          <li><strong>自动续订：</strong>订阅会通过你的 Apple ID 账户扣款，并在当前周期结束前自动续订，除非你在 Apple 规定的时间内关闭自动续订。</li>
+          <li><strong>管理订阅：</strong>你可以在 iOS 系统设置或 App Store 账户页面中查看、变更或取消订阅。</li>
+          <li><strong>恢复购买：</strong>如果你更换设备或重新安装应用，可以在应用内使用恢复购买功能恢复符合条件的会员权益。</li>
+          <li><strong>退款：</strong>购买、退款和取消订阅由 Apple 根据 App Store 规则处理。我们无法直接控制 Apple 的退款结果。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>5. 会员权益</h2>
+        <p>会员权益可能包括更多提醒能力、数据同步、图标或其他高级功能。具体权益以应用内展示为准。我们可能会在不影响已购买核心权益的前提下优化、调整或新增会员功能。</p>
+        <p>如果因网络、Apple、RevenueCat、Supabase 或其他第三方服务异常导致权益识别延迟，请尝试恢复购买、重新打开应用或联系我们。</p>
+      </section>
+
+      <section>
+        <h2>6. 数据与隐私</h2>
+        <p>我们会按照隐私政策处理与你使用应用相关的信息。隐私政策说明了我们可能处理的数据类型、处理目的、第三方服务和你的选择。</p>
+        <p><a href="./time_privacy.html">查看「倒计时+」隐私政策</a></p>
+      </section>
+
+      <section>
+        <h2>7. 知识产权</h2>
+        <p>本应用中的界面设计、文字、图标、代码、品牌元素和其他内容受法律保护。除非法律允许或我们明确授权，你不得复制、修改、分发、出售、出租或以其他方式利用本应用的任何部分。</p>
+        <p>你在应用中创建的倒计时内容仍归你所有。你授权我们在提供本应用功能所必需的范围内处理这些内容，例如本地展示、提醒、小组件更新和同步。</p>
+      </section>
+
+      <section>
+        <h2>8. 第三方服务</h2>
+        <p>本应用可能依赖 Apple、RevenueCat、Supabase 等第三方服务来完成下载、订阅购买、购买校验、登录、同步或基础运行能力。你使用相关功能时，也可能需要遵守这些第三方服务的条款和政策。</p>
+      </section>
+
+      <section>
+        <h2>9. 免责声明与责任限制</h2>
+        <p>本应用按现状提供。我们会努力保持应用稳定、准确和可用，但不保证服务不会中断、不会出错，或完全满足你的所有预期。</p>
+        <p>在适用法律允许的范围内，我们不对因使用或无法使用本应用而产生的间接、偶然、特殊、惩罚性或后果性损失承担责任。</p>
+      </section>
+
+      <section>
+        <h2>10. 条款变更</h2>
+        <p>我们可能会根据产品功能、法律法规或平台规则变化更新本条款。更新后，我们会在应用内、官方网站或相关页面展示新的生效日期。你继续使用本应用，即表示你接受更新后的条款。</p>
+      </section>
+
+      <section>
+        <h2>11. 联系我们</h2>
+        <p>如果你对本使用条款、订阅权益或应用服务有任何问题，可以通过以下邮箱联系我们：</p>
+        <a class="contact" href="mailto:time_countdown@ynglan.cn">time_countdown@ynglan.cn</a>
+      </section>
+    </main>
+
+    <footer>© 2026 倒计时+。保留所有权利。</footer>
+  </div>
+</body>
+</html>
