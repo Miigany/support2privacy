@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>情绪云朵隐私政策</title>
-  <meta name="description" content="情绪云朵 App 隐私政策（本地存储版）" />
+  <title>Mellow Cloud 隐私政策</title>
+  <meta name="description" content="Mellow Cloud App privacy policy with local-only storage." />
   <style>
     :root {
       color-scheme: light;
@@ -51,6 +51,14 @@
       -webkit-backdrop-filter: blur(10px);
     }
 
+    .hero-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
     .tag {
       display: inline-block;
       padding: 6px 12px;
@@ -59,7 +67,35 @@
       border: 1px solid rgba(229, 216, 239, 0.9);
       color: #927cab;
       font-size: 0.92rem;
-      margin-bottom: 12px;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      flex: 0 0 auto;
+      gap: 4px;
+      padding: 4px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.74);
+      border: 1px solid rgba(229, 216, 239, 0.95);
+    }
+
+    .lang-switch button {
+      min-width: 78px;
+      padding: 6px 12px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 0.92rem;
+      line-height: 1.2;
+      cursor: pointer;
+    }
+
+    .lang-switch button[aria-pressed="true"] {
+      color: var(--heading);
+      background: rgba(255,255,255,0.96);
+      box-shadow: 0 6px 16px rgba(189, 168, 204, 0.16);
     }
 
     h1 {
@@ -67,7 +103,7 @@
       font-size: clamp(1.9rem, 2.7vw, 2.55rem);
       line-height: 1.2;
       color: var(--heading);
-      letter-spacing: -0.03em;
+      letter-spacing: 0;
     }
 
     .subtitle {
@@ -97,18 +133,10 @@
       -webkit-backdrop-filter: blur(10px);
     }
 
-    .note, .pill-box {
+    .pill-box {
       border-radius: 18px;
       padding: 16px 18px;
       margin: 18px 0 22px;
-    }
-
-    .note {
-      background: var(--card-strong);
-      border: 1px solid rgba(236, 220, 245, 0.95);
-    }
-
-    .pill-box {
       background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,247,243,0.96));
       border: 1px solid rgba(244, 223, 214, 0.92);
     }
@@ -146,15 +174,6 @@
 
     a:hover { text-decoration: underline; }
 
-    code {
-      padding: 0.15em 0.42em;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.92);
-      border: 1px solid rgba(229, 216, 239, 0.95);
-      color: #8f6ca8;
-      font-size: 0.95em;
-    }
-
     .contact, .footer { color: var(--muted); }
 
     .footer {
@@ -163,107 +182,280 @@
       text-align: center;
     }
 
+    [data-lang-panel] { display: none; }
+
+    body[data-lang="zh"] [data-lang-panel="zh"],
+    body[data-lang="en"] [data-lang-panel="en"] {
+      display: block;
+    }
+
     @media (max-width: 700px) {
       .wrap { padding: 20px 12px 48px; }
       .hero, .card { border-radius: 22px; }
       .hero { padding: 22px 18px; }
       .card { padding: 24px 18px; }
+      .hero-top {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      .lang-switch { align-self: flex-start; }
     }
   </style>
 </head>
 <body>
   <main class="wrap">
     <section class="hero">
-      <div class="tag">Emotion Cloud · Privacy Policy</div>
-      <h1>情绪云朵隐私政策</h1>
-      <p class="subtitle">温柔记录情绪，也认真守护隐私。</p>
-      <div class="meta">生效日期：2026年6月24日　·　最后更新：2026年6月24日</div>
+      <div class="hero-top">
+        <div class="tag">Mellow Cloud · Privacy Policy</div>
+        <nav class="lang-switch" aria-label="Language switcher">
+          <button type="button" data-lang-button="zh" aria-pressed="true">中文</button>
+          <button type="button" data-lang-button="en" aria-pressed="false">English</button>
+        </nav>
+      </div>
+
+      <div data-lang-panel="zh">
+        <h1>Mellow Cloud 隐私政策</h1>
+        <p class="subtitle">温柔记录情绪，也认真守护隐私。</p>
+        <div class="meta">生效日期：2026年6月24日　·　最后更新：2026年6月24日</div>
+      </div>
+
+      <div data-lang-panel="en">
+        <h1>Mellow Cloud Privacy Policy</h1>
+        <p class="subtitle">A gentle place for mood notes, with privacy kept close.</p>
+        <div class="meta">Effective Date: June 24, 2026 · Last Updated: June 24, 2026</div>
+      </div>
     </section>
 
     <article class="card">
-      <p>欢迎使用 <strong>情绪云朵</strong>（以下简称“本应用”）。本应用由 <strong>ynglan.cn</strong>（以下简称“我们”）提供。我们非常重视您的个人信息与隐私保护，并承诺以清晰、透明、尽量简洁的方式说明本应用如何处理数据。</p>
+      <div data-lang-panel="zh">
+        <p>欢迎使用 <strong>Mellow Cloud</strong>（以下简称“本应用”）。本应用由 <strong>ynglan.cn</strong>（以下简称“我们”）提供。我们非常重视您的个人信息与隐私保护，并承诺以清晰、透明、尽量简洁的方式说明本应用如何处理数据。</p>
 
-      <div class="pill-box">
-        <strong>核心说明：</strong>情绪云朵采用<strong>本地存储</strong>模式。您在本应用中记录的情绪、日记、标签、偏好设置等内容，默认仅保存在您的设备本地。我们<strong>不会将这些数据上传至我们的服务器</strong>，也<strong>不会进行云同步</strong>、出售或共享您的情绪记录。
+        <div class="pill-box">
+          <strong>核心说明：</strong>Mellow Cloud 采用<strong>本地存储</strong>模式。您在本应用中记录的情绪、日记、标签、偏好设置等内容，默认仅保存在您的设备本地。我们<strong>不会将这些数据上传至我们的服务器</strong>，也<strong>不会进行云同步</strong>、出售或共享您的情绪记录。
+        </div>
+
+        <h2>1. 适用范围</h2>
+        <p>本隐私政策适用于您在使用 Mellow Cloud App 过程中与本应用相关的数据处理行为。若本应用中出现由第三方独立提供的服务或链接，则该等服务适用其自身的隐私政策，不适用本政策。</p>
+
+        <h2>2. 我们处理哪些信息</h2>
+        <p>基于目前版本的产品设计，Mellow Cloud 以本地功能为主，不设置账号体系，不提供开发者服务器云同步功能。您在使用过程中可能会在设备本地生成以下信息：</p>
+        <ul>
+          <li><strong>情绪记录内容：</strong>例如您输入的心情、文字、标签、备注或其他与情绪记录相关的内容。</li>
+          <li><strong>本地偏好设置：</strong>例如提醒设置、界面偏好、使用习惯配置等。</li>
+          <li><strong>必要的本地运行数据：</strong>用于支持应用在您的设备上正常运行的数据缓存或本地配置。</li>
+        </ul>
+        <p>上述信息原则上仅保存在您的设备中，由您自行控制。</p>
+
+        <h2>3. 我们不会做的事情</h2>
+        <p>除非未来版本明确新增相关功能并另行告知，否则当前版本下，我们不会：</p>
+        <ul>
+          <li>不会创建或要求您注册 Mellow Cloud 账号；</li>
+          <li>不会将您的情绪记录上传到我们的服务器；</li>
+          <li>不会将您的情绪记录共享、出售或出租给第三方；</li>
+          <li>不会基于您的情绪记录进行广告定向投放；</li>
+          <li>不会主动读取与本应用功能无关的个人信息。</li>
+        </ul>
+
+        <h2>4. 我们如何使用信息</h2>
+        <p>由于本应用采取本地存储模式，您的数据主要用于在您的设备上实现以下功能：</p>
+        <ul>
+          <li>保存和展示您的情绪记录；</li>
+          <li>支持您查看历史内容、回顾情绪变化；</li>
+          <li>保存应用内的基础设置与使用偏好；</li>
+          <li>保障本应用基础功能正常运行。</li>
+        </ul>
+        <p>我们不会将本地记录用于建立外部用户画像，也不会用于开发者侧的数据分析。</p>
+
+        <h2>5. 数据存储方式</h2>
+        <p>您的数据默认仅存储在您的 iPhone 或 iPad 等设备本地。只要您不主动导出、分享或通过系统方式备份给第三方，开发者无法直接访问您的情绪记录内容。</p>
+        <p>请注意：</p>
+        <ul>
+          <li>如果您删除本应用，保存在本地的数据可能会被一并删除且无法恢复；</li>
+          <li>如果您启用了设备级备份（例如 Apple 提供的系统备份能力），相关备份行为由相应系统服务提供方依据其政策处理，并不属于我们直接控制的范围；</li>
+          <li>如未来版本增加云同步、账号体系或其他在线能力，我们会在功能上线前更新本政策并取得必要授权。</li>
+        </ul>
+
+        <h2>6. 权限说明</h2>
+        <p>Mellow Cloud 仅会在实现相应功能所必需的情况下申请系统权限。不同版本可能涉及的权限包括但不限于：</p>
+        <ul>
+          <li><strong>通知权限：</strong>用于发送您主动开启的提醒通知；</li>
+          <li><strong>其他系统权限：</strong>仅在您使用相应功能时申请，并以当时页面说明为准。</li>
+        </ul>
+        <p>您可以随时通过 iOS 系统设置关闭或撤回相关权限。撤回后，部分功能可能无法正常使用，但不会影响您停止使用本应用的权利。</p>
+
+        <h2>7. 第三方服务与共享</h2>
+        <p>基于您提供的信息，当前版本的数据仅保留在本地。除非本应用实际集成了某些第三方服务且另行说明，否则我们不会与第三方共享您的情绪记录内容。</p>
+        <p>如果您后续接入统计、崩溃分析、登录、订阅、客服或云服务 SDK，请在上线前补充更新本条内容，并确保与 App Store 隐私标签保持一致。</p>
+
+        <h2>8. 数据安全</h2>
+        <p>虽然您的数据主要保存在本地，您仍应注意保护设备安全，例如设置设备密码、Face ID / Touch ID、及时更新系统，以及避免将设备交由他人长期使用。由于数据安全也与您的设备环境有关，我们无法承诺绝对安全，但会尽合理努力减少产品本身带来的安全风险。</p>
+
+        <h2>9. 您的权利与选择</h2>
+        <p>由于我们原则上不掌握您的本地记录内容，您可以直接通过设备或 App 内功能管理自己的数据，包括查看、修改和删除本地记录。您也可以通过系统设置管理通知及其他权限。</p>
+
+        <h2>10. 未成年人保护</h2>
+        <p>本应用不以未成年人为主要目标用户。如您为未成年人，建议在监护人的指导下阅读并使用本应用。如监护人认为未成年人在使用过程中存在任何隐私风险或疑问，可通过下述联系方式与我们联系。</p>
+
+        <h2>11. 非医疗声明</h2>
+        <p>Mellow Cloud 是一款用于情绪记录、自我观察和个人管理的工具，不构成医疗、心理咨询、诊断、治疗或紧急干预服务。如您处于紧急风险、严重焦虑、抑郁、自伤或其他需要立即帮助的情况，请尽快联系专业医疗机构、心理援助热线或当地紧急救助部门。</p>
+
+        <h2>12. 本隐私政策的更新</h2>
+        <p>我们可能根据产品功能调整、法律法规要求或业务变化更新本隐私政策。若更新内容对您的权利产生重大影响，我们会以适当方式提示您。更新后的版本一经发布即生效，页面上的“最后更新”日期也会同步调整。</p>
+
+        <h2>13. 联系我们</h2>
+        <p class="contact">如果您对本隐私政策有任何问题、意见或建议，请通过以下方式联系我们：</p>
+        <p class="contact">
+          开发者/网站：<strong><a href="https://ynglan.cn">ynglan.cn</a></strong><br />
+          联系邮箱：<strong><a href="mailto:qianhen2sandbox@163.com">qianhen2sandbox@163.com</a></strong>
+        </p>
+
+        <p class="footer">© 2026 Mellow Cloud。保留所有权利。</p>
       </div>
 
-      <h2>1. 适用范围</h2>
-      <p>本隐私政策适用于您在使用情绪云朵 App 过程中与本应用相关的数据处理行为。若本应用中出现由第三方独立提供的服务或链接，则该等服务适用其自身的隐私政策，不适用本政策。</p>
+      <div data-lang-panel="en">
+        <p>Welcome to <strong>Mellow Cloud</strong> (the “App”). The App is provided by <strong>ynglan.cn</strong> (“we,” “us,” or “our”). We care deeply about your personal information and privacy, and we aim to explain clearly, transparently, and simply how the App handles data.</p>
 
-      <h2>2. 我们处理哪些信息</h2>
-      <p>基于目前版本的产品设计，情绪云朵以本地功能为主，不设置账号体系，不提供开发者服务器云同步功能。您在使用过程中可能会在设备本地生成以下信息：</p>
-      <ul>
-        <li><strong>情绪记录内容：</strong>例如您输入的心情、文字、标签、备注或其他与情绪记录相关的内容。</li>
-        <li><strong>本地偏好设置：</strong>例如提醒设置、界面偏好、使用习惯配置等。</li>
-        <li><strong>必要的本地运行数据：</strong>用于支持应用在您的设备上正常运行的数据缓存或本地配置。</li>
-      </ul>
-      <p>上述信息原则上仅保存在您的设备中，由您自行控制。</p>
+        <div class="pill-box">
+          <strong>Key point:</strong> Mellow Cloud uses a <strong>local storage</strong> model. The moods, journal entries, tags, preferences, and related content you record in the App are stored on your device by default. We <strong>do not upload this data to our servers</strong>, and we <strong>do not provide cloud sync</strong>, sell, or share your mood records.
+        </div>
 
-      <h2>3. 我们不会做的事情</h2>
-      <p>除非未来版本明确新增相关功能并另行告知，否则当前版本下，我们不会：</p>
-      <ul>
-        <li>不会创建或要求您注册情绪云朵账号；</li>
-        <li>不会将您的情绪记录上传到我们的服务器；</li>
-        <li>不会将您的情绪记录共享、出售或出租给第三方；</li>
-        <li>不会基于您的情绪记录进行广告定向投放；</li>
-        <li>不会主动读取与本应用功能无关的个人信息。</li>
-      </ul>
+        <h2>1. Scope</h2>
+        <p>This Privacy Policy applies to data processing related to your use of the Mellow Cloud App. If the App contains services or links independently provided by third parties, those services are governed by their own privacy policies, not this Policy.</p>
 
-      <h2>4. 我们如何使用信息</h2>
-      <p>由于本应用采取本地存储模式，您的数据主要用于在您的设备上实现以下功能：</p>
-      <ul>
-        <li>保存和展示您的情绪记录；</li>
-        <li>支持您查看历史内容、回顾情绪变化；</li>
-        <li>保存应用内的基础设置与使用偏好；</li>
-        <li>保障本应用基础功能正常运行。</li>
-      </ul>
-      <p>我们不会将本地记录用于建立外部用户画像，也不会用于开发者侧的数据分析。</p>
+        <h2>2. Information We Process</h2>
+        <p>Based on the current product design, Mellow Cloud is primarily local-first. It does not provide an account system or developer-operated server cloud sync. During use, the following information may be generated locally on your device:</p>
+        <ul>
+          <li><strong>Mood record content:</strong> such as moods, text, tags, notes, or other content related to mood records that you enter.</li>
+          <li><strong>Local preferences:</strong> such as reminder settings, interface preferences, and usage configuration.</li>
+          <li><strong>Necessary local operation data:</strong> such as cache or local configuration data needed for the App to run properly on your device.</li>
+        </ul>
+        <p>In principle, the information above is stored only on your device and remains under your control.</p>
 
-      <h2>5. 数据存储方式</h2>
-      <p>您的数据默认仅存储在您的 iPhone 或 iPad 等设备本地。只要您不主动导出、分享或通过系统方式备份给第三方，开发者无法直接访问您的情绪记录内容。</p>
-      <p>请注意：</p>
-      <ul>
-        <li>如果您删除本应用，保存在本地的数据可能会被一并删除且无法恢复；</li>
-        <li>如果您启用了设备级备份（例如 Apple 提供的系统备份能力），相关备份行为由相应系统服务提供方依据其政策处理，并不属于我们直接控制的范围；</li>
-        <li>如未来版本增加云同步、账号体系或其他在线能力，我们会在功能上线前更新本政策并取得必要授权。</li>
-      </ul>
+        <h2>3. What We Do Not Do</h2>
+        <p>Unless a future version explicitly adds related features and gives you separate notice, in the current version we do not:</p>
+        <ul>
+          <li>Create or require you to register a Mellow Cloud account;</li>
+          <li>Upload your mood records to our servers;</li>
+          <li>Share, sell, or rent your mood records to third parties;</li>
+          <li>Use your mood records for targeted advertising;</li>
+          <li>Actively read personal information unrelated to the App’s functions.</li>
+        </ul>
 
-      <h2>6. 权限说明</h2>
-      <p>情绪云朵仅会在实现相应功能所必需的情况下申请系统权限。不同版本可能涉及的权限包括但不限于：</p>
-      <ul>
-        <li><strong>通知权限：</strong>用于发送您主动开启的提醒通知；</li>
-        <li><strong>其他系统权限：</strong>仅在您使用相应功能时申请，并以当时页面说明为准。</li>
-      </ul>
-      <p>您可以随时通过 iOS 系统设置关闭或撤回相关权限。撤回后，部分功能可能无法正常使用，但不会影响您停止使用本应用的权利。</p>
+        <h2>4. How We Use Information</h2>
+        <p>Because the App uses local storage, your data is mainly used on your device to provide the following functions:</p>
+        <ul>
+          <li>Save and display your mood records;</li>
+          <li>Help you view historical content and review changes in mood;</li>
+          <li>Save basic in-app settings and usage preferences;</li>
+          <li>Keep the App’s basic functions operating normally.</li>
+        </ul>
+        <p>We do not use local records to build external user profiles or for developer-side data analytics.</p>
 
-      <h2>7. 第三方服务与共享</h2>
-      <p>基于您提供的信息，当前版本的数据仅保留在本地。除非本应用实际集成了某些第三方服务且另行说明，否则我们不会与第三方共享您的情绪记录内容。</p>
-      <p>如果您后续接入统计、崩溃分析、登录、订阅、客服或云服务 SDK，请在上线前补充更新本条内容，并确保与 App Store 隐私标签保持一致。</p>
+        <h2>5. Data Storage</h2>
+        <p>Your data is stored by default only on your local device, such as your iPhone or iPad. As long as you do not actively export, share, or back up the data to a third party through system features, the developer cannot directly access the content of your mood records.</p>
+        <p>Please note:</p>
+        <ul>
+          <li>If you delete the App, locally stored data may be deleted together with it and may not be recoverable;</li>
+          <li>If you enable device-level backup, such as backup features provided by Apple, the relevant backup activity is handled by the corresponding system service provider under its own policies and is not directly controlled by us;</li>
+          <li>If a future version adds cloud sync, accounts, or other online capabilities, we will update this Policy before launch and obtain any required authorization.</li>
+        </ul>
 
-      <h2>8. 数据安全</h2>
-      <p>虽然您的数据主要保存在本地，您仍应注意保护设备安全，例如设置设备密码、Face ID / Touch ID、及时更新系统，以及避免将设备交由他人长期使用。由于数据安全也与您的设备环境有关，我们无法承诺绝对安全，但会尽合理努力减少产品本身带来的安全风险。</p>
+        <h2>6. Permissions</h2>
+        <p>Mellow Cloud requests system permissions only when necessary to provide the relevant function. Permissions involved in different versions may include, but are not limited to:</p>
+        <ul>
+          <li><strong>Notifications:</strong> used to send reminders that you actively enable;</li>
+          <li><strong>Other system permissions:</strong> requested only when you use the corresponding function, subject to the explanation shown at that time.</li>
+        </ul>
+        <p>You can disable or withdraw permissions at any time in iOS system settings. After withdrawal, some functions may not work properly, but this does not affect your right to stop using the App.</p>
 
-      <h2>9. 您的权利与选择</h2>
-      <p>由于我们原则上不掌握您的本地记录内容，您可以直接通过设备或 App 内功能管理自己的数据，包括查看、修改和删除本地记录。您也可以通过系统设置管理通知及其他权限。</p>
+        <h2>7. Third-Party Services and Sharing</h2>
+        <p>Based on the information you provided, data in the current version remains local. Unless the App actually integrates certain third-party services and provides separate notice, we do not share your mood record content with third parties.</p>
+        <p>If analytics, crash reporting, login, subscription, customer support, or cloud service SDKs are added later, this section should be supplemented before launch and kept consistent with the App Store privacy labels.</p>
 
-      <h2>10. 未成年人保护</h2>
-      <p>本应用不以未成年人为主要目标用户。如您为未成年人，建议在监护人的指导下阅读并使用本应用。如监护人认为未成年人在使用过程中存在任何隐私风险或疑问，可通过下述联系方式与我们联系。</p>
+        <h2>8. Data Security</h2>
+        <p>Although your data is mainly stored locally, you should still protect your device, for example by setting a device passcode, using Face ID / Touch ID, keeping the system updated, and avoiding long-term use of the device by others. Because data security also depends on your device environment, we cannot promise absolute security, but we will make reasonable efforts to reduce security risks caused by the product itself.</p>
 
-      <h2>11. 非医疗声明</h2>
-      <p>情绪云朵是一款用于情绪记录、自我观察和个人管理的工具，不构成医疗、心理咨询、诊断、治疗或紧急干预服务。如您处于紧急风险、严重焦虑、抑郁、自伤或其他需要立即帮助的情况，请尽快联系专业医疗机构、心理援助热线或当地紧急救助部门。</p>
+        <h2>9. Your Rights and Choices</h2>
+        <p>Because we generally do not possess your local record content, you can manage your data directly through your device or in-app functions, including viewing, modifying, and deleting local records. You can also manage notifications and other permissions through system settings.</p>
 
-      <h2>12. 本隐私政策的更新</h2>
-      <p>我们可能根据产品功能调整、法律法规要求或业务变化更新本隐私政策。若更新内容对您的权利产生重大影响，我们会以适当方式提示您。更新后的版本一经发布即生效，页面上的“最后更新”日期也会同步调整。</p>
+        <h2>10. Protection of Minors</h2>
+        <p>The App is not primarily directed to minors. If you are a minor, we recommend reading and using the App under the guidance of a guardian. If a guardian believes there are privacy risks or questions related to a minor’s use, they may contact us through the contact information below.</p>
 
-      <h2>13. 联系我们</h2>
-      <p class="contact">如果您对本隐私政策有任何问题、意见或建议，请通过以下方式联系我们：</p>
-      <p class="contact">
-        开发者/网站：<strong><a href="https://ynglan.cn">ynglan.cn</a></strong><br />
-        联系邮箱：<strong><a href="mailto:qianhen2sandbox@163.com">qianhen2sandbox@163.com</a></strong>
-      </p>
+        <h2>11. Non-Medical Statement</h2>
+        <p>Mellow Cloud is a tool for mood recording, self-observation, and personal management. It does not provide medical, psychological counseling, diagnosis, treatment, or emergency intervention services. If you are facing an emergency risk, severe anxiety, depression, self-harm, or any other situation requiring immediate help, please contact a professional medical institution, mental health support hotline, or local emergency service as soon as possible.</p>
 
-      <p class="footer">© 2026 情绪云朵。保留所有权利。</p>
+        <h2>12. Updates to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy based on product changes, legal and regulatory requirements, or business changes. If an update materially affects your rights, we will notify you in an appropriate way. The updated version takes effect once published, and the “Last Updated” date on the page will be updated accordingly.</p>
+
+        <h2>13. Contact Us</h2>
+        <p class="contact">If you have any questions, comments, or suggestions about this Privacy Policy, please contact us through the following methods:</p>
+        <p class="contact">
+          Developer / Website: <strong><a href="https://ynglan.cn">ynglan.cn</a></strong><br />
+          Email: <strong><a href="mailto:qianhen2sandbox@163.com">qianhen2sandbox@163.com</a></strong>
+        </p>
+
+        <p class="footer">© 2026 Mellow Cloud. All rights reserved.</p>
+      </div>
     </article>
   </main>
+
+  <script>
+    (function () {
+      var storageKey = "mellow-cloud-privacy-language";
+      var buttons = Array.prototype.slice.call(document.querySelectorAll("[data-lang-button]"));
+      var titles = {
+        zh: "Mellow Cloud 隐私政策",
+        en: "Mellow Cloud Privacy Policy"
+      };
+      var descriptions = {
+        zh: "Mellow Cloud App 隐私政策（本地存储版）",
+        en: "Mellow Cloud App privacy policy with local-only storage."
+      };
+
+      function getInitialLanguage() {
+        try {
+          var savedLanguage = window.localStorage.getItem(storageKey);
+          if (savedLanguage === "zh" || savedLanguage === "en") {
+            return savedLanguage;
+          }
+        } catch (error) {
+          // Ignore storage access issues and fall back to browser language.
+        }
+
+        var browserLanguage = (navigator.language || navigator.userLanguage || "").toLowerCase();
+        return browserLanguage.indexOf("zh") === 0 ? "zh" : "en";
+      }
+
+      function setLanguage(language) {
+        var nextLanguage = language === "zh" ? "zh" : "en";
+        document.body.setAttribute("data-lang", nextLanguage);
+        document.documentElement.lang = nextLanguage === "zh" ? "zh-CN" : "en";
+        document.title = titles[nextLanguage];
+
+        var description = document.querySelector('meta[name="description"]');
+        if (description) {
+          description.setAttribute("content", descriptions[nextLanguage]);
+        }
+
+        buttons.forEach(function (button) {
+          button.setAttribute("aria-pressed", String(button.getAttribute("data-lang-button") === nextLanguage));
+        });
+
+        try {
+          window.localStorage.setItem(storageKey, nextLanguage);
+        } catch (error) {
+          // Language switching still works when storage is unavailable.
+        }
+      }
+
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          setLanguage(button.getAttribute("data-lang-button"));
+        });
+      });
+
+      setLanguage(getInitialLanguage());
+    }());
+  </script>
 </body>
 </html>
