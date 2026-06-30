@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mellow Cloud 技术支持</title>
+  <meta name="description" content="Mellow Cloud App 技术支持与常见问题。" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg-a: #f1e8fb;
+      --bg-b: #fff4ee;
+      --bg-c: #fffaf7;
+      --card: rgba(255,255,255,0.84);
+      --text: #5d5669;
+      --heading: #4e465d;
+      --muted: #8f879a;
+      --border: rgba(229, 216, 239, 0.9);
+      --shadow: 0 18px 44px rgba(189, 168, 204, 0.16);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.85;
+      background: linear-gradient(135deg, var(--bg-a) 0%, var(--bg-b) 52%, var(--bg-c) 100%);
+    }
+
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 28px 16px 64px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(255,255,255,0.76), rgba(255,255,255,0.62));
+      border: 1px solid rgba(255,255,255,0.9);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 28px 24px;
+      margin-bottom: 18px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(229, 216, 239, 0.9);
+      color: #927cab;
+      font-size: 0.92rem;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      flex: 0 0 auto;
+      gap: 4px;
+      padding: 4px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.74);
+      border: 1px solid rgba(229, 216, 239, 0.95);
+    }
+
+    .lang-switch button {
+      min-width: 78px;
+      padding: 6px 12px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 0.92rem;
+      line-height: 1.2;
+      cursor: pointer;
+    }
+
+    .lang-switch button[aria-pressed="true"] {
+      color: var(--heading);
+      background: rgba(255,255,255,0.96);
+      box-shadow: 0 6px 16px rgba(189, 168, 204, 0.16);
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.9rem, 2.7vw, 2.55rem);
+      line-height: 1.2;
+      color: var(--heading);
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 0;
+      font-size: 1rem;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(229, 216, 239, 0.95);
+      background: rgba(255,255,255,0.82);
+      color: #8f6ca8;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button.primary {
+      background: #9a78b0;
+      color: #fff;
+      border-color: #9a78b0;
+      box-shadow: 0 10px 22px rgba(154, 120, 176, 0.22);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 30px 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .pill-box {
+      border-radius: 18px;
+      padding: 16px 18px;
+      margin: 18px 0 22px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,247,243,0.96));
+      border: 1px solid rgba(244, 223, 214, 0.92);
+    }
+
+    h2 {
+      margin: 30px 0 12px;
+      padding-top: 16px;
+      border-top: 1px dashed rgba(206, 183, 221, 0.75);
+      font-size: 1.16rem;
+      color: var(--heading);
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    h3 {
+      margin: 18px 0 8px;
+      font-size: 1.02rem;
+      color: var(--heading);
+    }
+
+    p, li {
+      font-size: 1rem;
+      margin: 0 0 10px;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 22px;
+    }
+
+    strong { color: var(--heading); }
+
+    a {
+      color: #9a78b0;
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .contact, .footer { color: var(--muted); }
+
+    .footer {
+      margin-top: 28px;
+      font-size: 0.94rem;
+      text-align: center;
+    }
+
+    [data-lang-panel] { display: none; }
+
+    body[data-lang="zh"] [data-lang-panel="zh"],
+    body[data-lang="en"] [data-lang-panel="en"] {
+      display: block;
+    }
+
+    @media (max-width: 700px) {
+      .wrap { padding: 20px 12px 48px; }
+      .hero, .card { border-radius: 22px; }
+      .hero { padding: 22px 18px; }
+      .card { padding: 24px 18px; }
+      .hero-top {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      .lang-switch { align-self: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-top">
+        <div class="tag">Mellow Cloud · Support</div>
+        <nav class="lang-switch" aria-label="Language switcher">
+          <button type="button" data-lang-button="zh" aria-pressed="true">中文</button>
+          <button type="button" data-lang-button="en" aria-pressed="false">English</button>
+        </nav>
+      </div>
+
+      <div data-lang-panel="zh">
+        <h1>Mellow Cloud 技术支持</h1>
+        <p class="subtitle">如果你在记录情绪、管理日记或使用提醒时遇到问题，可以在这里找到帮助。</p>
+        <div class="actions">
+          <a class="button primary" href="mailto:qianhen2sandbox@163.com?subject=Mellow%20Cloud%20%E6%8A%80%E6%9C%AF%E6%94%AF%E6%8C%81">联系支持</a>
+          <a class="button" href="./mood_privacy.html">查看隐私政策</a>
+          <a class="button" href="./mood_terms.html">查看使用条款</a>
+        </div>
+      </div>
+
+      <div data-lang-panel="en">
+        <h1>Mellow Cloud Support</h1>
+        <p class="subtitle">Find help for mood entries, journals, reminders, and local data in Mellow Cloud.</p>
+        <div class="actions">
+          <a class="button primary" href="mailto:qianhen2sandbox@163.com?subject=Mellow%20Cloud%20Support">Contact Support</a>
+          <a class="button" href="./mood_privacy.html">Privacy Policy</a>
+          <a class="button" href="./mood_terms.html">Terms of Use</a>
+        </div>
+      </div>
+    </section>
+
+    <article class="card">
+      <div data-lang-panel="zh">
+        <h2>1. 联系开发者</h2>
+        <p>如需帮助，请通过以下邮箱联系我们。为了更快定位问题，建议在邮件中附上 App 版本、iOS 版本、设备型号、问题截图以及复现步骤。</p>
+        <p class="contact">
+          开发者/网站：<strong><a href="https://ynglan.cn">ynglan.cn</a></strong><br />
+          联系邮箱：<strong><a href="mailto:qianhen2sandbox@163.com">qianhen2sandbox@163.com</a></strong><br />
+          应用名称：<strong>Mellow Cloud</strong>
+        </p>
+
+        <div class="pill-box">
+          <strong>支持说明：</strong>Mellow Cloud 以本地记录和自我观察为核心。你的情绪记录、日记、标签和偏好设置默认保存在设备本地，开发者通常无法直接查看或恢复你的本地记录。
+        </div>
+
+        <h2>2. 常见问题</h2>
+        <h3>记录内容不见了怎么办？</h3>
+        <ul>
+          <li>请确认是否删除并重新安装过 App。删除 App 可能会同时删除本地数据。</li>
+          <li>请确认是否更换了设备，或是否通过系统备份恢复了 App 数据。</li>
+          <li>如果问题持续，请尽量提供发生时间、设备型号和操作步骤，方便排查。</li>
+        </ul>
+
+        <h3>提醒没有按时出现怎么办？</h3>
+        <ul>
+          <li>请在 iOS 设置中确认 Mellow Cloud 的通知权限已开启。</li>
+          <li>请检查专注模式、勿扰模式或系统通知摘要是否影响提醒显示。</li>
+          <li>请确认你在 App 内设置了正确的提醒时间。</li>
+        </ul>
+
+        <h3>我可以同步或备份数据吗？</h3>
+        <p>当前版本以本地存储为主，不提供开发者服务器云同步。若你启用了 Apple 提供的设备级备份，相关备份能力由系统服务提供方处理。</p>
+
+        <h2>3. 数据与隐私</h2>
+        <p>Mellow Cloud 不要求注册账号，也不会默认将你的情绪记录上传到开发者服务器。有关数据处理方式，请查看隐私政策。</p>
+
+        <h2>4. 反馈建议</h2>
+        <p>欢迎发送功能建议、体验反馈或问题报告。请尽量描述你希望完成的操作、遇到的现象，以及你期待的结果。</p>
+
+        <h2>5. 非医疗声明</h2>
+        <p>Mellow Cloud 是情绪记录、自我观察和个人管理工具，不构成医疗、心理咨询、诊断、治疗或紧急干预服务。如你正处于紧急风险或需要立即帮助，请联系专业医疗机构、心理援助热线或当地紧急救助部门。</p>
+
+        <p class="footer">© 2026 Mellow Cloud。保留所有权利。</p>
+      </div>
+
+      <div data-lang-panel="en">
+        <h2>1. Contact the Developer</h2>
+        <p>If you need help, please contact us by email. To help us understand the issue faster, include the app version, iOS version, device model, screenshots, and steps to reproduce the problem when possible.</p>
+        <p class="contact">
+          Developer / Website: <strong><a href="https://ynglan.cn">ynglan.cn</a></strong><br />
+          Email: <strong><a href="mailto:qianhen2sandbox@163.com">qianhen2sandbox@163.com</a></strong><br />
+          App Name: <strong>Mellow Cloud</strong>
+        </p>
+
+        <div class="pill-box">
+          <strong>Support note:</strong> Mellow Cloud focuses on local mood records and self-observation. Your mood entries, journals, tags, and preferences are stored on your device by default, so the developer usually cannot directly view or restore your local records.
+        </div>
+
+        <h2>2. Frequently Asked Questions</h2>
+        <h3>What should I do if my records are missing?</h3>
+        <ul>
+          <li>Check whether the App was deleted and reinstalled. Deleting the App may also delete local data.</li>
+          <li>Check whether you changed devices or restored app data from a system backup.</li>
+          <li>If the issue continues, please share the approximate time, device model, and steps that led to the issue.</li>
+        </ul>
+
+        <h3>What should I do if reminders do not appear on time?</h3>
+        <ul>
+          <li>Make sure notifications for Mellow Cloud are enabled in iOS Settings.</li>
+          <li>Check whether Focus mode, Do Not Disturb, or scheduled notification summary affects reminder delivery.</li>
+          <li>Confirm that the reminder time is set correctly in the App.</li>
+        </ul>
+
+        <h3>Can I sync or back up my data?</h3>
+        <p>The current version is local-first and does not provide developer-operated server cloud sync. If you enable device-level backup provided by Apple, that backup is handled by the system service provider.</p>
+
+        <h2>3. Data and Privacy</h2>
+        <p>Mellow Cloud does not require account registration and does not upload your mood records to developer servers by default. For details about data handling, please see the Privacy Policy.</p>
+
+        <h2>4. Feedback</h2>
+        <p>Feature suggestions, experience feedback, and issue reports are welcome. Please describe what you wanted to do, what happened, and what result you expected.</p>
+
+        <h2>5. Non-Medical Statement</h2>
+        <p>Mellow Cloud is a tool for mood recording, self-observation, and personal management. It does not provide medical, psychological counseling, diagnosis, treatment, or emergency intervention services. If you are facing an emergency risk or need immediate help, please contact a professional medical institution, mental health support hotline, or local emergency service.</p>
+
+        <p class="footer">© 2026 Mellow Cloud. All rights reserved.</p>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      var storageKey = "mellow-cloud-support-language";
+      var buttons = Array.prototype.slice.call(document.querySelectorAll("[data-lang-button]"));
+      var titles = {
+        zh: "Mellow Cloud 技术支持",
+        en: "Mellow Cloud Support"
+      };
+      var descriptions = {
+        zh: "Mellow Cloud App 技术支持与常见问题。",
+        en: "Mellow Cloud App support and frequently asked questions."
+      };
+
+      function getInitialLanguage() {
+        try {
+          var savedLanguage = window.localStorage.getItem(storageKey);
+          if (savedLanguage === "zh" || savedLanguage === "en") {
+            return savedLanguage;
+          }
+        } catch (error) {
+          // Ignore storage access issues and fall back to browser language.
+        }
+
+        var browserLanguage = (navigator.language || navigator.userLanguage || "").toLowerCase();
+        return browserLanguage.indexOf("zh") === 0 ? "zh" : "en";
+      }
+
+      function setLanguage(language) {
+        var nextLanguage = language === "zh" ? "zh" : "en";
+        document.body.setAttribute("data-lang", nextLanguage);
+        document.documentElement.lang = nextLanguage === "zh" ? "zh-CN" : "en";
+        document.title = titles[nextLanguage];
+
+        var description = document.querySelector('meta[name="description"]');
+        if (description) {
+          description.setAttribute("content", descriptions[nextLanguage]);
+        }
+
+        buttons.forEach(function (button) {
+          button.setAttribute("aria-pressed", String(button.getAttribute("data-lang-button") === nextLanguage));
+        });
+
+        try {
+          window.localStorage.setItem(storageKey, nextLanguage);
+        } catch (error) {
+          // Language switching still works when storage is unavailable.
+        }
+      }
+
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          setLanguage(button.getAttribute("data-lang-button"));
+        });
+      });
+
+      setLanguage(getInitialLanguage());
+    }());
+  </script>
+</body>
+</html>
